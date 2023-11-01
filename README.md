@@ -29,6 +29,8 @@ Sirve para subir todos los cambios de la rama al repositorio de github, despues 
 
 Sirve para cambiar de rama.
 
+> **PD:** *Siempre que se quiera realizar una funcionalidad nueva, crear una nueva rama. No se debe trabajar siempre en la misma rama ya que puede generar conflictos y es mala practica*
+
 ### **git checkout -b nombre-rama-nueva**
 
 Sirve para crear una rama nueva y cambiarte a ella.
