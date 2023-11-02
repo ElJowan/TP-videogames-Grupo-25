@@ -1,7 +1,10 @@
 # depslib dependency file v1.0
-1698869111 source:c:\users\joann\downloads\videojuego2.0\videojuego\main.cpp
+1698891455 source:c:\users\joann\downloads\videojuego2.0\videojuego\main.cpp
 	<iostream>
 	"rlutil.h"
+	"Funcion contador.h"
+	<cstdlib>
+	<time.h>
 
 1571584339 c:\users\joann\downloads\videojuego2.0\videojuego\rlutil.h
 	<iostream>
@@ -16,4 +19,6 @@
 	<sys/ioctl.h>
 	<sys/types.h>
 	<sys/time.h>
+
+1698888679 c:\users\joann\downloads\videojuego2.0\videojuego\funcion contador.h
 
