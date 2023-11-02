@@ -14,6 +14,43 @@ int tirarDados(int dado[6]){
     return 0;
 }
 
+void generarDado(int numero) {
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 10; j++) {
+            if(numero == 1 && ((j == 4 || j == 5) && i == 2)) {
+                cout<<" ";
+            } 
+            else if (numero == 2 && ((i == 1 && (j == 7 || j == 8)) || (i == 3 && (j == 1 || j == 2)))) {
+                cout<<" ";
+            }
+            else if (numero == 3 && (((i == 1 && (j == 7 || j == 8)) || (i == 3 && (j == 1 || j == 2))) || ((j == 4 || j == 5) && i == 2))) {
+                cout<<" ";
+            }
+            else if (numero == 4 && (((i == 1 || i == 3) && (j == 7 || j == 8)) || ((i == 1 || i == 3) && (j == 1 || j == 2)))) {
+                cout<<" ";
+            }
+            else if (numero == 5 && ((((i == 1 || i == 3) && (j == 7 || j == 8)) || ((i == 1 || i == 3) && (j == 1 || j == 2))) || ((j == 4 || j == 5) && i == 2))) {
+                cout<<" ";
+            }
+            else if(numero == 6 && ((i == 1 && (j == 1 || j == 2 || j == 4 || j == 5 || j == 7 || j == 8)) || (i == 3 && (j == 1 || j == 2 || j == 4 || j == 5 || j == 7 || j == 8)))) {
+                cout<<" ";
+            }
+            else {
+                numero == 1 ? rlutil::setColor(rlutil::MAGENTA) : 
+                numero == 2 ? rlutil::setColor(rlutil::GREEN) :
+                numero == 3 ? rlutil::setColor(rlutil::RED) :
+                numero == 4 ? rlutil::setColor(rlutil::LIGHTCYAN) :
+                numero == 5 ? rlutil::setColor(rlutil::BROWN) :
+                numero == 6 ? rlutil::setColor(rlutil::BLUE) : rlutil::setColor(rlutil::CYAN);
+
+                cout<<static_cast<char>(254);
+            }
+        }
+        cout<<endl;
+    }
+    cout<<endl<<endl;
+}
+
 int contador(int[6]);
 
 int main(){
@@ -66,6 +103,30 @@ int main(){
     for (int i = 0; i < 6; i++)
     {
         cout<<dado[i]<<endl;
+        switch (dado[i])
+        {
+        case 1:
+            generarDado(1);
+            break;
+        case 2:
+            generarDado(2);
+            break;
+        case 3:
+            generarDado(3);
+            break;
+        case 4:
+            generarDado(4);
+            break;
+        case 5:
+            generarDado(5);
+            break;
+        case 6:
+            generarDado(6);
+            break;
+
+        default:
+            break;
+        }
     }
     
 
