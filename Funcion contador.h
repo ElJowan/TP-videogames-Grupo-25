@@ -34,11 +34,11 @@ int contador(int dado[6], int puntaje){
         if(acumulador[i]<3){
             result+=dado[i];
         }
-        if(acumulador[i]>2 && acumulador[i]<6 && dado[i]>mult){
-            mult=dado[i];
+        if(acumulador[i]>2 && acumulador[i]<6 && i + 1>mult){
+            mult= i + 1;
         }
         if(acumulador[i]==6 && acumulador[i]!=acumulador[5]){
-            return dado[i]*50+puntaje;
+            return ((i + 1)*50)+puntaje;
         }
     }
 

@@ -6,9 +6,12 @@
 
 using namespace std;
 
-int tirarDados(){
-    int random=1+(rand()%6);
-    return random;
+int tirarDados(int dado[6]){
+    srand(time(NULL));
+    for (int i = 0; i < 6; i++) {
+        dado[i]=1+(rand()%6);
+    }
+    return 0;
 }
 
 int contador(int[6]);
@@ -57,10 +60,15 @@ int main(){
             return 0;
             ;break;
     }
-    for(int i=0;i<6;i++){
-        dado[i]=tirarDados();
+    
+    tirarDados(dado);
+
+    for (int i = 0; i < 6; i++)
+    {
         cout<<dado[i]<<endl;
     }
+    
+
     cout<<contador(dado, 0);
     return 0;
 }
