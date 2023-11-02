@@ -1,11 +1,21 @@
 #include <iostream>
 #include "rlutil.h"
+#include "Funcion contador.h"
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
+int tirarDados(){
+    int random=1+(rand()%6);
+    return random;
+}
+
+int contador(int[6]);
+
 int main(){
-    int cantjug;
-    char p1[0], p2[0];
+    int cantjug, dado[6], puntaje1, puntaje2;
+    char p1[256], p2[256];
     cout<<"Bienvenido a ";
     rlutil::setColor(rlutil::LIGHTBLUE);
     cout<<"QUINIENTOS O ESCALERA"<<endl;
@@ -21,7 +31,6 @@ int main(){
            cin>>p1;
            rlutil::setColor(rlutil::WHITE);
            cout<<"------------------------------"<<endl;
-           cout<<endl;
            rlutil::anykey();
            rlutil::cls();
            ;break;
@@ -38,7 +47,6 @@ int main(){
            cin>>p2;
            rlutil::setColor(rlutil::WHITE);
            cout<<"------------------------------"<<endl;
-           cout<<endl;
            rlutil::anykey();
            rlutil::cls();
            ;break;
@@ -49,7 +57,10 @@ int main(){
             return 0;
             ;break;
     }
-    cout<<"Hola "<<p1<<endl;
-    cout<<"Hola "<<p2<<endl;
+    for(int i=0;i<6;i++){
+        dado[i]=tirarDados();
+        cout<<dado[i]<<endl;
+    }
+    cout<<contador(dado, 0);
     return 0;
 }
