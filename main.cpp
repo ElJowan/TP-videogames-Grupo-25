@@ -7,12 +7,11 @@
 using namespace std;
 
 //Funcion que recibe el vector "dado" de la funcion main, genera 6 numeros aleatoreios y los reemplaza por cada indice del vector.
-int tirarDados(int dado[6]) {
+void tirarDados(int dado[6]) {
     srand(time(NULL));
     for (int i = 0; i < 6; i++) {
         dado[i] = 1 + (rand() % 6);
     }
-    return 0;
 }
 
 //FUNCION "GENERAR DADOS": Recibe como parametro un int para posteriormente verificar que numero es entre 1-6 y dependiendo del resultado hace un cout
