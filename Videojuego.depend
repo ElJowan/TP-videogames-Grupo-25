@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1699496932 source:c:\users\joann\downloads\videojuego2.0\videojuego\main.cpp
+1699877838 source:c:\users\joann\downloads\videojuego2.0\videojuego\main.cpp
 	<iostream>
 	"rlutil.h"
 	"Funcion contador.h"

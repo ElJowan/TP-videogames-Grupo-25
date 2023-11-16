@@ -58,12 +58,14 @@ int main(){
 
     int cantjug, dado[6], puntaje1=0, puntaje2=0;
     char p1[256], p2[256];
+    cout<<"==================================="<<endl;
     cout<<"Bienvenido a ";
     rlutil::setColor(rlutil::LIGHTBLUE);
     cout<<"QUINIENTOS O ESCALERA"<<endl;
     rlutil::setColor(rlutil::WHITE);
     cout<<"Ingrese la cantidad de jugadores: ";
     cin>>cantjug;
+    cout<<"==================================="<<endl;
 
     //cantidad de jugadores
     switch(cantjug){
@@ -104,11 +106,14 @@ int main(){
     int ronda=0, lanz=3, lanz2=3, l;
     while(puntaje1<500 && puntaje2<500){
             ronda++;
+            rlutil::setColor(rlutil::BLUE);
             cout<<"=========================================="<<endl;
             cout<<"RONDA NUMERO "<<ronda<<endl<<endl;
-            cout<<"Turno de "<<p1<<endl;
-            cout<<"Presione cualquier tecla para proseguir..."<<endl<<endl;
+            if(cantjug==2){
+            cout<<"Turno de "<<p1<<endl;}
+            cout<<"Presione cualquier tecla para proseguir..."<<endl;
             cout<<"=========================================="<<endl;
+            rlutil::setColor(rlutil::WHITE);
             rlutil::anykey();
             rlutil::cls();
 
@@ -166,12 +171,15 @@ int main(){
                     }
                     }
 
+                    if(cantjug==2){
                     //Turno del segundo jugador
+                    rlutil::setColor(rlutil::RED);
                 cout<<"=========================================="<<endl;
                 cout<<"RONDA NUMERO "<<ronda<<endl<<endl;
                 cout<<"Turno de "<<p2<<endl;
-                cout<<"Presione cualquier tecla para proseguir..."<<endl<<endl;
+                cout<<"Presione cualquier tecla para proseguir..."<<endl;
                 cout<<"=========================================="<<endl;
+                rlutil::setColor(rlutil::WHITE);
                 rlutil::anykey();
                 rlutil::cls();
                      for(l=1;l<=3;l++){
@@ -226,38 +234,65 @@ int main(){
                         l=4;
                     }
                     }
+                    }
+
+    if(cantjug==2){
     cout<<"========================="<<endl;
     cout<<"RONDA: "<<ronda<<endl;
     cout<<"PUNTOS DE "<<p1<<": "<<puntaje1<<endl;
     cout<<"PUNTOS DE "<<p2<<": "<<puntaje2<<endl<<endl;
-    cout<<"Prsione para continuar..."<<endl;
+    cout<<"Presione para continuar..."<<endl;
     cout<<"========================="<<endl;
     rlutil::anykey();
     rlutil::cls();
     }
+    else{
+    cout<<"========================="<<endl;
+    cout<<"RONDA: "<<ronda<<endl;
+    cout<<"PUNTOS DE "<<p1<<": "<<puntaje1<<endl;
+    cout<<"Presione para continuar..."<<endl;
+    cout<<"========================="<<endl;
+    rlutil::anykey();
+    rlutil::cls();
+    }
+    }
 
+    if(cantjug==2){
     if(puntaje1>=500 && puntaje2>=500){
         if(lanz<lanz2){
+            rlutil::setColor(rlutil::YELLOW);
             cout<<"EL GANADOR ES "<<p1<<endl;
+            rlutil::setColor(rlutil::WHITE);
         }
         else if(lanz2<lanz){
+            rlutil::setColor(rlutil::YELLOW);
             cout<<"EL GANADOR ES "<<p2<<endl;
+            rlutil::setColor(rlutil::WHITE);
         }
         else{
-            cout<<"Se llego a empate"<<endl;
+            cout<<"Se llego a empate... ¿revancha?"<<endl;
         }
     }
     else if(puntaje1>=500){
+         rlutil::setColor(rlutil::YELLOW);
          cout<<"EL GANADOR ES "<<p1<<endl;
+         rlutil::setColor(rlutil::WHITE);
     }
     else if(puntaje2>=500){
+         rlutil::setColor(rlutil::YELLOW);
          cout<<"EL GANADOR ES "<<p2<<endl;
+         rlutil::setColor(rlutil::WHITE);
     }
     else{
         rlutil::setColor(rlutil::RED);
         cout<<"HTTPS STATUS CODE 418"<<endl;
         rlutil::setColor(rlutil::WHITE);
-
+    }
+    }
+    else if(cantjug==1 && puntaje1>=500){
+        rlutil::setColor(rlutil::YELLOW);
+        cout<<"FELICIDADES "<<p1<<" GANASTE EN QUINIENTOS O ESCALERA"<<endl<<"Invita a un amigo para jugar el modo 2 jugadores y mas diversion!!!"<<endl;
+        rlutil::setColor(rlutil::WHITE);
     }
     return 0;
 }
